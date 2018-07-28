@@ -15,7 +15,7 @@ class AddressController extends Controller
     {
         return view('admin.address.index',['addresses'=>Address::all()]);
     }
-
+/////
     public function store(AddressRequest $request,$id=null)
     {
         if(!$id)
