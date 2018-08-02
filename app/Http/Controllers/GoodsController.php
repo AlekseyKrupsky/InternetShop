@@ -18,6 +18,7 @@ class GoodsController extends Controller
 
     public function show($id)
     {
+
         $good = Good::find($id);
         return view('goods.show',['good'=>$good]);
     }

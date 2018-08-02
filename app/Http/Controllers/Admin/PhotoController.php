@@ -53,13 +53,13 @@ class PhotoController extends Controller
     $request->path->move(public_path('images/photos'), $path);
     $all = $request->except('path');
     $all['path'] = $path;
-    Photo::create($all);
+    $photo = Photo::create($all);
 
-//        if($id){
-//            Good::find($id)->addphoto();
-//        }
-
-    return redirect(route('adm_photo'));
+        if($id){
+            Good::find($id)->addphoto($photo);
+            return redirect(route('adm_good_edit',$id));
+        }
+    else return redirect(route('adm_photo'));
 
 
     }

@@ -18,6 +18,8 @@ Route::get('/good/{id}','GoodsController@show')->name('good_show');
 Route::post('/good/{id}','CommentController@add')->name('good_show');
 Route::get('/about','AboutController@index')->name('about');
 
+
+
 Route::prefix('admin')->group(function (){
 
     Route::get('/','Admin\AdminController@index')->name('admin');
@@ -52,7 +54,8 @@ Route::prefix('admin')->group(function (){
 
     Route::get('/comments','Admin\CommentController@index')->name('adm_comments');
     Route::get('/comments/{id}','Admin\CommentController@destroy')->name('adm_comment_del');
-    Route::get('/about','AboutController@edit')->name('adm_about');
+    Route::get('/about','Admin\AboutController@edit')->name('adm_about');
+    Route::post('/about','Admin\AboutController@store')->name('adm_about');
 
     Route::prefix('address')->group(function (){
         Route::get('/','Admin\AddressController@index')->name('adm_address');
@@ -61,6 +64,15 @@ Route::prefix('admin')->group(function (){
         Route::patch('/edit/{id}','Admin\AddressController@update')->name('adm_add_edit');
         Route::delete('/edit/{id}','Admin\AddressController@destroy')->name('adm_add_edit');
         Route::get('/list/{id}','Admin\AddressController@show')->name('adm_add_list');
+    });
+
+    Route::prefix('subsection')->group(function (){
+        Route::get('/','Admin\SubsectionController@index')->name('adm_sub');
+        Route::get('/edit/{id}','Admin\SubsectionController@edit')->name('adm_sub_each');
+        Route::get('/create','Admin\SubsectionController@create')->name('adm_sub_create');
+        Route::post('/','Admin\SubsectionController@store');
+        Route::patch('/edit/{id}','Admin\SubsectionController@update')->name('adm_cat_each');
+        Route::delete('/edit/{id}','Admin\SubsectionController@destroy')->name('adm_cat_each');
     });
 
 

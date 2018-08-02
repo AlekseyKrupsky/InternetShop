@@ -15,8 +15,8 @@ class AddressController extends Controller
     {
         return view('admin.address.index',['addresses'=>Address::all()]);
     }
-/////
-    public function store(AddressRequest $request,$id=null)
+
+    public function store(Request $request,$id=null)
     {
         if(!$id)
         {
@@ -25,7 +25,8 @@ class AddressController extends Controller
         }
         else {
            $good = Good::find($id);
-           $good->addaddress($request->address);
+           $address = Address::find($request->address_id);
+          $good->addAddress($address);
            return redirect()->route('adm_good_edit',$id);
         }
     }
@@ -34,7 +35,6 @@ class AddressController extends Controller
     {
         Address::find($id)->delete();
         return redirect()->route('adm_address');
-
     }
 
     public function edit()

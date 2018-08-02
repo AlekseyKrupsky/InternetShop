@@ -24,19 +24,25 @@ class Good extends Model
         return $this->belongsToMany('App\Model\Photo','good_photo','good_id','photo_id');
     }
 
-//    public function addphoto()
-//    {
-//        $this->photos()->create();
-//    }
+    public function addphoto($photo)
+    {
+        $this->photos()->sync($photo,false);
+    }
 
     public function addresses()
     {
         return $this->belongsToMany('App\Model\Address','good_address','good_id','address_id');
     }
 
-    public function addaddress($address)
+    public function addAddress($address)
     {
-        $this->addresses()->create(['address'=>$address]);
+        $this->addresses()->sync($address,false);
     }
+
+
+//    public function addaddress($address)
+//    {
+//        $this->addresses()->create(['address'=>$address]);
+//    }
 
 }

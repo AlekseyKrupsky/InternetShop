@@ -69,16 +69,17 @@
         </div>
     </form>
 
-    <h2>Добавить адрес</h2>
+    <h2>Адреса</h2>
     <form action="{{route('adm_add_create',$good->id)}}" method="post">
         {{csrf_field()}}
-        <div class="form-group">
-            <label for="formGroupExampleInput">Адрес (255 символов)</label>
-            <input type="text" name="address" class="form-control" id="formGroupExampleInput" placeholder="Введите новый адрес">
-        </div>
+        <select class="form-control" id="exampleSelect1" name="address_id">
+            @foreach($addresses as $address)
+                <option value="{{$address->id}}">{{$address->address}}</option>
+            @endforeach
+        </select>
+        <br>
         <div class="form-group">
             <button type="submit" class="btn btn-primary">Добавить новый адрес</button>
         </div>
     </form>
-
 @endsection

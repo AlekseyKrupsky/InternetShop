@@ -10,6 +10,7 @@ use App\Model\Category;
 use App\Model\Good;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Model\Address;
 
 
 class GoodsController extends Controller
@@ -79,7 +80,8 @@ class GoodsController extends Controller
         //
         $good = Good::find($id);
         $cats = Category::all();
-        return view('admin.good.edit',['good'=>$good,'categorys'=>$cats]);
+        $addresses = Address::all();
+        return view('admin.good.edit',['good'=>$good,'categorys'=>$cats,'addresses'=>$addresses]);
     }
 
     /**

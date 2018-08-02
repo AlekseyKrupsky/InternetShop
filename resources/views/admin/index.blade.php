@@ -13,6 +13,11 @@
         <p class="lead">This example is a quick exercise to illustrate how the top-aligned navbar works. As you scroll, this navbar remains in its original position and moves with the rest of the page.</p>
         <a class="btn btn-lg btn-primary" href="{{route('adm_cat')}}" role="button">Перейти</a>
     </div>
+        <div class="jumbotron">
+            <h1>Подкатегории</h1>
+            <p class="lead">This example is a quick exercise to illustrate how the top-aligned navbar works. As you scroll, this navbar remains in its original position and moves with the rest of the page.</p>
+            <a class="btn btn-lg btn-primary" href="{{route('adm_sub')}}" role="button">Перейти</a>
+        </div>
     <div class="jumbotron">
         <h1>Товары</h1>
         <p class="lead">This example is a quick exercise to illustrate how the top-aligned navbar works. As you scroll, this navbar remains in its original position and moves with the rest of the page.</p>
@@ -35,7 +40,6 @@
         </div>
     @show
 </main>
-
 @include('layouts.footer')
 
 <!-- Bootstrap core JavaScript
