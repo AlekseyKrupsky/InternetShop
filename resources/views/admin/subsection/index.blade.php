@@ -5,7 +5,7 @@
     @if(count($subs)>0)
     <div class="list-group">
         @foreach($subs as $sub)
-            <a href="{{route('adm_sub_each',$sub->id)}}" class="list-group-item">{{$sub->name}}</a>
+            <a href="{{route('adm_sub_each',$sub->id)}}" class="list-group-item">{{$sub->category->name}} / {{$sub->name}}</a>
         @endforeach
     </div>
     <br>

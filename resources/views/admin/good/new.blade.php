@@ -4,7 +4,6 @@
     <h2>Добавление нового товара</h2>
     <br>
     @include('layouts.errors')
-
     <form method="post" action="{{route('adm_good')}}" enctype="multipart/form-data">
         {{csrf_field()}}
         <div class="form-group">
@@ -21,9 +20,13 @@
         </div>
         <div class="form-group">
             <label for="exampleSelect1">Категория</label>
-            <select class="form-control" id="exampleSelect1" name="category_id">
+            <select class="form-control" id="exampleSelect1" name="subsection_id">
             @foreach($categorys as $category)
-                    <option value="{{$category->id}}">{{$category->name}}</option>
+                <optgroup label="{{$category->name}}">
+                @foreach($category->subsections as $subsection)
+                        <option value="{{$subsection->id}}">{{$subsection->name}}</option>
+                    @endforeach
+                </optgroup>
                 @endforeach
             </select>
         </div>
@@ -39,5 +42,4 @@
             <button type="submit" class="btn btn-primary">Добавить</button>
         </div>
     </form>
-
 @endsection

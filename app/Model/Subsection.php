@@ -13,4 +13,11 @@ class Subsection extends Model
     {
         return $this->belongsTo('App\Model\Category');
     }
+
+    public function goods()
+    {
+        return $this->hasMany('App\Model\Good');
+    }
+
+
 }

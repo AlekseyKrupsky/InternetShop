@@ -11,9 +11,7 @@ class GoodsController extends Controller
     //
     public function index($id)
     {
-        $goods = Good::where('category_id',$id)->get();
-      //  dump($goods);
-        return view('goods.index',['goods'=>$goods]);
+
     }
 
     public function show($id)

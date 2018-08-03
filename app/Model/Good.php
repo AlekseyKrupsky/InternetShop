@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Good extends Model
 {
     //
-    protected $fillable = ['name','short_description','description','icon','category_id','price'];
+    protected $fillable = ['name','short_description','description','icon','subsection_id','price'];
 
     public function comments()
     {
@@ -18,7 +18,8 @@ class Good extends Model
     {
         $this->comments()->create(['text'=>$text]);
     }
-    
+
+
     public function photos()
     {
         return $this->belongsToMany('App\Model\Photo','good_photo','good_id','photo_id');
@@ -28,6 +29,7 @@ class Good extends Model
     {
         $this->photos()->sync($photo,false);
     }
+
 
     public function addresses()
     {

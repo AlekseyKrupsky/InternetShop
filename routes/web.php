@@ -13,10 +13,14 @@
 
 Route::get('/', 'WelcomeController@index')->name('welcome');
 
-Route::get('/category/{id}','GoodsController@index')->name('category');
+
 Route::get('/good/{id}','GoodsController@show')->name('good_show');
 Route::post('/good/{id}','CommentController@add')->name('good_show');
 Route::get('/about','AboutController@index')->name('about');
+
+Route::get('/category/{id}','SectionController@index')->name('category');
+Route::get('/section/{id}','SectionController@show')->name('section_show');
+
 
 
 

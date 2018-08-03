@@ -19,17 +19,23 @@
             <label for="formGroupExampleInput2">Описание</label>
             <textarea name="description" class="form-control"  cols="30" rows="5">{{$good->description}}</textarea>
         </div>
+
         <div class="form-group">
             <label for="exampleSelect1">Категория</label>
-            <select class="form-control" id="exampleSelect1" name="category_id">
+            <select class="form-control" id="exampleSelect1" name="subsection_id">
                 @foreach($categorys as $category)
-                    @if($category->id==$good->category_id)
-                        <option selected value="{{$category->id}}">{{$category->name}}</option>
-                        @else <option value="{{$category->id}}">{{$category->name}}</option>
-                        @endif
+                    <optgroup label="{{$category->name}}">
+                        @foreach($category->subsections as $subsection)
+                            @if($subsection->id==$good->subsection_id)
+                            <option selected value="{{$subsection->id}}">{{$subsection->name}}</option>
+                                @else <option value="{{$subsection->id}}">{{$subsection->name}}</option>
+                            @endif
+                        @endforeach
+                    </optgroup>
                 @endforeach
             </select>
         </div>
+
         <div class="form-group">
             <label for="formGroupExampleInput">Стоимость</label>
             <input type="text" name="price" class="form-control" placeholder="" value="{{$good->price}}">

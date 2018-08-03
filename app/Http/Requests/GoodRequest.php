@@ -28,7 +28,7 @@ class GoodRequest extends FormRequest
             'name'=>'required|max:255',
             'short_description'=>'required|max:255',
             'description'=>'required',
-            'category_id'=>'required|numeric',
+          //  'category_id'=>'required|numeric',
             'price'=>'required|numeric',
             'icon'=>'image'
         ];
