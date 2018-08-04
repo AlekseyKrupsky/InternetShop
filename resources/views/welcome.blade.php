@@ -14,7 +14,7 @@
     <div class="container">
         <!-- Example row of columns -->
         <div class="row">
-            @foreach($categorys as $category)
+            @foreach($allcats as $category)
                 <div class="col-md-4">
                     <h2>{{$category->name}}</h2>
                     <p>{{$category->description}}</p>

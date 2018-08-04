@@ -14,6 +14,7 @@
         <br>
     @else <h2>Нет ни одной подкатегории</h2>
     @endif
+            <h2>Все товары</h2>
             <div class="row">
     @foreach($cat->subsections->all() as $sub)
 
@@ -38,10 +39,7 @@
                 </div>
             </div>
             @endforeach
-
-
         @endif
-
     @endforeach
             </div>
         </div>

@@ -15,6 +15,8 @@ Route::get('/', 'WelcomeController@index')->name('welcome');
 
 
 Route::get('/good/{id}','GoodsController@show')->name('good_show');
+Route::get('/goods','GoodsController@index')->name('all_goods');
+
 Route::post('/good/{id}','CommentController@add')->name('good_show');
 Route::get('/about','AboutController@index')->name('about');
 

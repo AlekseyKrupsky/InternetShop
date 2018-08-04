@@ -15,8 +15,7 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         //
-//        $allcategorys = Category::all();
-//        view()->composer()
+//
     }
 
     /**

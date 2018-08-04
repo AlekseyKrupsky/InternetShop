@@ -9,9 +9,10 @@ use App\Model\Good;
 class GoodsController extends Controller
 {
     //
-    public function index($id)
+    public function index()
     {
-
+        $goods = Good::all()->sortByDesc('id');
+        return view('goods.all',['goods'=>$goods]);
     }
 
     public function show($id)
