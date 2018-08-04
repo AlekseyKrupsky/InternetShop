@@ -12,11 +12,17 @@
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Категории</a>
                 <div class="dropdown-menu" aria-labelledby="dropdown01">
-                    <a class="dropdown-item" href="#">Велосипеды</a>
-                    <a class="dropdown-item" href="#">Мотоциклы</a>
-                    <a class="dropdown-item" href="#">Автомобили</a>
+                    @foreach($links as $link)
+                        @if(!$link->parent)
+                            <a class="dropdown-item" href="{{$link->route}}">{{$link->name}}</a>
+                            @endif
+                        @endforeach
                 </div>
             </li>
+
+
+
+
             <li class="nav-item">
                 <a class="nav-link" href="{{route('about')}}">О нас</a>
             </li>

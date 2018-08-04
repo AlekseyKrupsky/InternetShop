@@ -5,6 +5,7 @@ namespace App\Providers;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\View;
 use App\Model\Category;
+use App\Model\Menu;
 
 class CategoryProvider extends ServiceProvider
 {
@@ -18,10 +19,9 @@ class CategoryProvider extends ServiceProvider
         //
         View::composer('welcome','App\Http\ViewComposer\CategoryComposer');
 
-
-       // View::composer('layouts.index', function ($view) {
-//          $view->with('allcats', Category::all());
-      //  });
+        View::composer('layouts.header', function ($view) {
+          $view->with('links', Menu::all());
+        });
     }
 
     /**
