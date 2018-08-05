@@ -18,7 +18,7 @@
                                     <h4>{{$good->name}}</h4>
                                     {{$good->short_description}}</p>
                                     <div class="d-flex justify-content-between align-items-center">
-            s                            <div class="btn-group">
+                                        <div class="btn-group">
                                             <a href="{{route('good_show',$good->id)}}" class="btn btn-sm btn-outline-secondary">Подробнее</a>
                                         </div>
                                         <h3><span class="badge badge-secondary">{{$good->price}} р.</span></h3>

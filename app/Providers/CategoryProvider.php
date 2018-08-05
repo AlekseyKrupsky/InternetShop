@@ -19,9 +19,9 @@ class CategoryProvider extends ServiceProvider
         View::composer('welcome','App\Http\ViewComposer\CategoryComposer');
 
 
-       // View::composer('layouts.index', function ($view) {
+//        View::composer('layouts.index', function ($view) {
 //          $view->with('allcats', Category::all());
-      //  });
+//        });
     }
 
     /**

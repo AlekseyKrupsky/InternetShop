@@ -1,6 +1,12 @@
 @extends('layouts.index')
 @section('content')
     <div class="container">
+        @if($flash = session('message'))
+            <br>
+            <div class="alert alert-success">
+                {{$flash}}
+            </div>
+            @endif
     <h2>{{$good->name}} <span class="badge badge-secondary">{{$good->price}} р.</span></h2>
         <img src="{{asset('images/icons/'.$good->icon)}}" alt="" height="150">
         <h4>Описание</h4>

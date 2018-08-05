@@ -10,7 +10,6 @@
             <p><a class="btn btn-primary btn-lg" href="{{route('about')}}" role="button">Наши контакты</a></p>
         </div>
     </div>
-
     <div class="container">
         <!-- Example row of columns -->
         <div class="row">

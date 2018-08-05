@@ -46,5 +46,28 @@ class Good extends Model
 //    {
 //        $this->addresses()->create(['address'=>$address]);
 //    }
+    public static function sum_like($p1,$p2,$p3){
+      // return
+
+
+        $goods=self::where('name','like',$p3)->orwhere('description','like',$p3);
+
+       if($p1)
+        {
+            $goods = $goods->where('price','>=',$p1);
+        }
+//
+        if($p2){
+            $goods = $goods->where('price','<=',$p2);
+        }
+
+       // if($goods->count()>0)
+            return $goods->get();
+
+       // else return Good::all();
+
+    }
+
+
 
 }

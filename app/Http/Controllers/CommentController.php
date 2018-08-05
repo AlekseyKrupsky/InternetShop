@@ -13,6 +13,8 @@ class CommentController extends Controller
 
         Good::find($id)->addcomment($request->comment);
 
+        session()->flash('message','Комментарий добавлен');
+      //  Mail::to($request->user())->send(new OrderShipped($order));
         return redirect(route('good_show',$id));
     }
 }
