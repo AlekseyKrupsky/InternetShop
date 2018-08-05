@@ -13,7 +13,6 @@
 
 Route::get('/', 'WelcomeController@index')->name('welcome');
 
-
 Route::get('/good/{id}','GoodsController@show')->name('good_show');
 Route::get('/goods','GoodsController@index')->name('all_goods');
 
@@ -23,10 +22,13 @@ Route::get('/about','AboutController@index')->name('about');
 Route::get('/category/{id}','SectionController@index')->name('category');
 Route::get('/section/{id}','SectionController@show')->name('section_show');
 
+Route::get('/neworder/{id}','OrderController@create')->name('new_order');
+
+Route::get('/cart/{id?}','CartController@index')->name('cart');
+Route::get('/cart/del/{id?}','CartController@destroy')->name('cart_del');
 
 
-
-Route::prefix('admin')->group(function (){
+Route::prefix('admin')->middleware('TestMiddleware')->group(function (){
 
     Route::get('/','Admin\AdminController@index')->name('admin');
 
@@ -83,3 +85,6 @@ Route::prefix('admin')->group(function (){
 
 
 });
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

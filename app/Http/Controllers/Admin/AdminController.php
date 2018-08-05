@@ -10,6 +10,7 @@ class AdminController extends MainController
     //
     public function index()
     {
+
         return view('admin.index');
     }
 }
