@@ -50,21 +50,23 @@ class Good extends Model
       // return
 
 
-        $goods=self::where('name','like',$p3)->orwhere('description','like',$p3);
+        $goods=self::orwhere('name','like',$p3)->where('description','like',$p3);
 
+
+        dump($goods);
        if($p1)
         {
             $goods = $goods->where('price','>=',$p1);
         }
-//
+
         if($p2){
             $goods = $goods->where('price','<=',$p2);
         }
 
-       // if($goods->count()>0)
+        if($goods->count()>0)
             return $goods->get();
 
-       // else return Good::all();
+        else return Good::all();
 
     }
 

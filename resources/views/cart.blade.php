@@ -28,7 +28,7 @@
                         </div>
                     @endforeach
 
-                @else <h3>В этом разделе товаров нет</h3>
+                @else <h3>Ваша корзина пуста</h3>
                 @endif
             </div>
         </div>
