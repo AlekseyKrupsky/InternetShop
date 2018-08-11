@@ -41,6 +41,15 @@ class Good extends Model
         $this->addresses()->sync($address,false);
     }
 
+    public function orders()
+    {
+        return $this->hasMany('App\Model\Order');
+    }
+
+    public function addorder($email)
+    {
+        $this->orders()->create(['email'=>$email]);
+    }
 
 //    public function addaddress($address)
 //    {

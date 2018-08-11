@@ -13,6 +13,9 @@
         @foreach($good->addresses as $address)
             {{$address->address}}
         @endforeach
+        <hr>
+        <a href="{{route('new_order',$good->id)}}" class="btn btn-primary">Оформить заказ</a>
+
         <h4>Комментарии</h4>
         <form action="{{route('good_show',$good->id)}}" method='post'>
                 {{csrf_field()}}

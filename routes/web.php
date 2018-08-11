@@ -23,8 +23,12 @@ Route::get('/about','AboutController@index')->name('about');
 Route::get('/category/{id}','SectionController@index')->name('category');
 Route::get('/section/{id}','SectionController@show')->name('section_show');
 
+Route::get('/neworder/{id}','OrderController@create')->name('new_order');
+Route::post('/neworder/{id}','OrderController@store')->name('new_order');
 
-
+Route::get('/cart','CartController@show')->name('cart');
+Route::get('/cart/add/{id?}','CartController@add')->name('cart_add');
+Route::get('/cart/del/{id?}','CartController@destroy')->name('cart_del');
 
 Route::prefix('admin')->group(function (){
 
