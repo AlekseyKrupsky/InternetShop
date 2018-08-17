@@ -4,9 +4,9 @@
     <br>
     <div class="album py-5 bg-light">
         <div class="container">
-
+            @if(count($goods)>0)
             <div class="row">
-                @if(count($goods)>0)
+
 
                     @foreach($goods->all() as $good)
                         <div class="col-md-4">
@@ -28,9 +28,12 @@
                         </div>
                     @endforeach
 
-                @else <h3>Ваша корзина пуста</h3>
-                @endif
+
             </div>
+            <br>
+            <h4>Всего к оплате: {{$goods->sum('price')}} р.</h4>
+            @else <h3>Ваша корзина пуста</h3>
+            @endif
         </div>
     </div>
 @endsection

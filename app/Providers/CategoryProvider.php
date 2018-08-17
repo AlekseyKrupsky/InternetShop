@@ -17,7 +17,7 @@ class CategoryProvider extends ServiceProvider
     public function boot()
     {
         //
-        View::composer('welcome','App\Http\ViewComposer\CategoryComposer');
+       // View::composer('welcome','App\Http\ViewComposer\CategoryComposer');
 
         View::composer('layouts.header', function ($view) {
           $view->with('links', Menu::all());

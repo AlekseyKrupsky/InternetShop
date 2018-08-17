@@ -12,8 +12,7 @@ class WelcomeController extends Controller
     public function index()
     {
 
-       $categorys = Category::all();
-      // echo $categorys;
-        return view('welcome',['categorys'=>$categorys]);
+       $categorys = Category::where('parent_id',NULL)->get();
+        return view('welcome',['allcats'=>$categorys]);
     }
 }

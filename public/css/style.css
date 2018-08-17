@@ -1,0 +1,27 @@
+.result {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 25px;
+    padding: 5px;
+    border-radius: 5px;
+    text-decoration: none;
+    color:black;
+}
+.result img{
+ margin-right: 20px;
+}
+a .result h4 {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+
+a .result:hover {
+    background: #f6f6f6;
+    text-decoration: none;
+    color:black;
+}
+a {
+    text-decoration: black;
+}

@@ -19,7 +19,7 @@ class SubsectionController extends MainController
     public function index()
     {
         //
-        $subs =Subsection::all();
+        $subs = Subsection::all();
         return view('admin.subsection.index',['subs'=>$subs]);
     }
 

@@ -30,6 +30,8 @@ Route::get('/cart','CartController@show')->name('cart');
 Route::get('/cart/add/{id?}','CartController@add')->name('cart_add');
 Route::get('/cart/del/{id?}','CartController@destroy')->name('cart_del');
 
+Route::get('/search','SearchController@index')->name('search');
+
 Route::prefix('admin')->group(function (){
 
     Route::get('/','Admin\AdminController@index')->name('admin');

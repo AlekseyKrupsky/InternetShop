@@ -4,7 +4,7 @@
     <br>
     <div class="album py-5 bg-light">
         <div class="container">
-    <h2>Подразделы</h2>
+    <h2>Подкатегории</h2>
     @if(count($cat->subsections->all())>0)
         <div class="list-group">
             @foreach($cat->subsections->all() as $sub)

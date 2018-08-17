@@ -13,6 +13,15 @@
             <input type="text" name="name" class="form-control" id="formGroupExampleInput" placeholder="Велосипеды">
         </div>
         <div class="form-group">
+            <label for="exampleSelect1">Родильская категория</label>
+            <select class="form-control" id="exampleSelect1" name="parent_id">
+                <option value="" selected>----</option>
+                @foreach($categorys as $category)
+                    <option value="{{$category->id}}">{{$category->name}}</option>
+                @endforeach
+            </select>
+        </div>
+        <div class="form-group">
             <label for="formGroupExampleInput2">Краткое описание (255 символов)</label>
             <textarea name="description" class="form-control" id="formGroupExampleInput2"  cols="30" rows="6"></textarea>
         </div>

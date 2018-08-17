@@ -44,6 +44,7 @@ class AddressController extends Controller
 
     public function show($id)
     {
-        return view('admin.address.list');
+        $address = Address::find($id);
+        return view('admin.address.list',['address'=>$address]);
     }
 }

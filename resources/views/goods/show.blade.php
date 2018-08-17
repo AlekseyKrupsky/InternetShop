@@ -9,10 +9,12 @@
         @foreach($good->photos as $photo)
             <img title="{{$photo->title}}" src="{{asset('images/photos/'.$photo->path)}}" alt="{{$photo->alt}}" height="100">
             @endforeach
+        @if(count($good->addresses)==0) Фотографий нет @endif
         <h4>Адреса доставки</h4>
         @foreach($good->addresses as $address)
             {{$address->address}}
         @endforeach
+        @if(count($good->addresses)==0) Адресов нет @endif
         <hr>
         <a href="{{route('new_order',$good->id)}}" class="btn btn-primary">Оформить заказ</a>
 

@@ -18,18 +18,24 @@
             <label for="formGroupExampleInput2">Описание</label>
             <textarea name="description" class="form-control"  cols="30" rows="5"></textarea>
         </div>
+
         <div class="form-group">
             <label for="exampleSelect1">Категория</label>
             <select class="form-control" id="exampleSelect1" name="subsection_id">
             @foreach($categorys as $category)
-                <optgroup label="{{$category->name}}">
+             @if($category->parent_id==NULL)   <optgroup label="{{$category->name}}">
                 @foreach($category->subsections as $subsection)
                         <option value="{{$subsection->id}}">{{$subsection->name}}</option>
                     @endforeach
-                </optgroup>
+                </optgroup>@else
+                        @foreach($category->subsections as $subsection)
+                            <option value="{{$subsection->id}}">{{$subsection->name}}</option>
+                        @endforeach
+                 @endif
                 @endforeach
             </select>
         </div>
+
         <div class="form-group">
             <label for="formGroupExampleInput2">Стоимость</label>
             <input type="text" name="price" class="form-control" placeholder="">

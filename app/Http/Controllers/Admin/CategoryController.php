@@ -23,7 +23,8 @@ class CategoryController extends Controller
     public function create()
     {
         //
-        return view('admin.category.new');
+        $categorys = Category::all();
+        return view('admin.category.new',['categorys'=>$categorys]);
     }
 
     /**
@@ -42,7 +43,8 @@ class CategoryController extends Controller
     public function edit($id)
     {
         $category = Category::find($id);
-        return view('admin.category.edit',['category'=>$category]);
+        $categorys = Category::where('id','<>',$category->id)->get();
+        return view('admin.category.edit',['category'=>$category,'all_cats'=>$categorys]);
     }
 
     public function update(CategoryRequest $request,$id)

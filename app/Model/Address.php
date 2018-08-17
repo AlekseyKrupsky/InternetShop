@@ -11,7 +11,7 @@ class Address extends Model
 
     public function goods()
     {
-        return $this->belongsToMany('App\Model\Good');
+        return $this->belongsToMany('App\Model\Good','good_address','address_id','good_id');
     }
 
     public function addgood($address)

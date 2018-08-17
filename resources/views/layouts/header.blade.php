@@ -23,9 +23,13 @@
             <li class="nav-item">
                 <a class="nav-link" href="{{route('about')}}">О нас</a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{route('cart')}}">Корзина</a>
+            </li>
         </ul>
-        <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="text" placeholder="Ищу..." aria-label="Search">
+        <form class="form-inline my-2 my-lg-0" method="get" action="{{route('search')}}">
+            {{csrf_field()}}
+            <input class="form-control mr-sm-2" name="search" type="text" placeholder="Ищу..." aria-label="Search" required>
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Искать</button>
         </form>
     </div>
