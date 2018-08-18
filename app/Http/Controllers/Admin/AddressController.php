@@ -8,7 +8,7 @@ use App\Http\Controllers\Controller;
 use App\Model\Address;
 use App\Http\Requests\AddressRequest;
 
-class AddressController extends Controller
+class AddressController extends MainController
 {
     //
     public function index()

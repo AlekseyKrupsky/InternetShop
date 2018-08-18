@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\CategoryRequest;
 
-class CategoryController extends Controller
+class CategoryController extends MainController
 {
     //
     public function index()
@@ -20,6 +20,9 @@ class CategoryController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+
+
     public function create()
     {
         //

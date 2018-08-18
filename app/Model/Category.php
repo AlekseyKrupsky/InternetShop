@@ -15,9 +15,25 @@ class Category extends Model
         return $this->hasMany('App\Model\Subsection');
     }
 
-    public static function getParent()
+    public function goods()
     {
+        return $this->hasMany('App\Model\Good');
+    }
 
+
+    public function getParent()
+    {
+        if($this->parent_id){
+          return Category::find($this->parent_id)->getParent().$this->name.' / ';
+        }
+        else {
+            return $this->name.' / ';
+        }
+    }
+
+    public function getChildren()
+    {
+        
     }
 }
 

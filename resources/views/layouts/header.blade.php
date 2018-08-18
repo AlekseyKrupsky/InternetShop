@@ -27,6 +27,9 @@
                 <a class="nav-link" href="{{route('cart')}}">Корзина</a>
             </li>
         </ul>
+        <div class="kurs">
+        1$ = {{$curs[0]}} 1€ = {{$curs[1]}}
+        </div>
         <form class="form-inline my-2 my-lg-0" method="get" action="{{route('search')}}">
             {{csrf_field()}}
             <input class="form-control mr-sm-2" name="search" type="text" placeholder="Ищу..." aria-label="Search" required>

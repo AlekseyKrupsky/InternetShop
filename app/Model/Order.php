@@ -8,5 +8,10 @@ class Order extends Model
 {
     //
     protected $table = 'orders';
-    protected $fillable = ['email'];
+    protected $fillable = ['email','address_id'];
+
+    public function good()
+    {
+        return $this->belongsTo('App\Model\Good');
+    }
 }

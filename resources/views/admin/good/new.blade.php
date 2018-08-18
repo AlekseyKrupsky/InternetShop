@@ -21,17 +21,9 @@
 
         <div class="form-group">
             <label for="exampleSelect1">Категория</label>
-            <select class="form-control" id="exampleSelect1" name="subsection_id">
+            <select class="form-control" id="exampleSelect1" name="category_id">
             @foreach($categorys as $category)
-             @if($category->parent_id==NULL)   <optgroup label="{{$category->name}}">
-                @foreach($category->subsections as $subsection)
-                        <option value="{{$subsection->id}}">{{$subsection->name}}</option>
-                    @endforeach
-                </optgroup>@else
-                        @foreach($category->subsections as $subsection)
-                            <option value="{{$subsection->id}}">{{$subsection->name}}</option>
-                        @endforeach
-                 @endif
+                    <option value="{{$category->id}}">  {{$category->getParent()}}</option>
                 @endforeach
             </select>
         </div>

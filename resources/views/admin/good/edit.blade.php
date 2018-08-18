@@ -22,16 +22,14 @@
 
         <div class="form-group">
             <label for="exampleSelect1">Категория</label>
-            <select class="form-control" id="exampleSelect1" name="subsection_id">
+            <select class="form-control" id="exampleSelect1" name="category_id">
                 @foreach($categorys as $category)
-                    <optgroup label="{{$category->name}}">
-                        @foreach($category->subsections as $subsection)
-                            @if($subsection->id==$good->subsection_id)
-                            <option selected value="{{$subsection->id}}">{{$subsection->name}}</option>
-                                @else <option value="{{$subsection->id}}">{{$subsection->name}}</option>
+                            @if($good->category_id==$category->id)
+                             <option value="{{$category->id}}" selected>  {{$category->getParent()}}</option>
+                                @else <option value="{{$category->id}}">  {{$category->getParent()}}</option>
                             @endif
-                        @endforeach
-                    </optgroup>
+
+
                 @endforeach
             </select>
         </div>

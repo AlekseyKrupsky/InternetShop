@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Good extends Model
 {
     //
-    protected $fillable = ['name','short_description','description','icon','subsection_id','price'];
+    protected $fillable = ['name','short_description','description','icon','category_id','price'];
 
     public function comments()
     {
@@ -46,9 +46,9 @@ class Good extends Model
         return $this->hasMany('App\Model\Order');
     }
 
-    public function addorder($email)
+    public function addorder($email,$address)
     {
-        $this->orders()->create(['email'=>$email]);
+        $this->orders()->create(['email'=>$email,'address_id'=>$address]);
     }
 
 //    public function addaddress($address)

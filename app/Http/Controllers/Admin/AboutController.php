@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Model\Static_data;
 
-class AboutController extends Controller
+class AboutController extends MainController
 {
     //
     public function edit()

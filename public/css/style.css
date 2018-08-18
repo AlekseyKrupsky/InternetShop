@@ -25,3 +25,13 @@ a .result:hover {
 a {
     text-decoration: black;
 }
+
+.cart-order {
+    display: flex;
+    justify-content: space-between;
+}
+
+.kurs{
+    color: white;
+    margin-right: 15px;
+}

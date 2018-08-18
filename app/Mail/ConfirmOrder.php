@@ -7,9 +7,8 @@ use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use App\Model\Good;
-use App\Model\Order;
 
-class OrderMessage extends Mailable
+class ConfirmOrder extends Mailable
 {
     use Queueable, SerializesModels;
 
@@ -32,7 +31,7 @@ class OrderMessage extends Mailable
      */
     public function build()
     {
-        return $this->view('mail.neworder')->with([
+        return $this->view('mail.confirm')->with([
             'name'=>$this->good->name,
             'price'=>$this->good->price,
             'address'=>$this->address

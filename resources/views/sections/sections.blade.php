@@ -4,27 +4,29 @@
     <br>
     <div class="album py-5 bg-light">
         <div class="container">
-    <h2>Подкатегории</h2>
-    @if(count($cat->subsections->all())>0)
+    @if(count($children)>0)
+                <h2>{{$cat->name}}</h2>
         <div class="list-group">
-            @foreach($cat->subsections->all() as $sub)
-                <a href="{{route('section_show',$sub->id)}}" class="list-group-item">{{$sub->name}}</a>
+            @foreach($children as $child)
+                <a href="{{route('category',$child->id)}}" class="list-group-item">{{$child->name}}</a>
             @endforeach
         </div>
         <br>
     @else <h2>Нет ни одной подкатегории</h2>
     @endif
-            <h2>Все товары</h2>
+        @if(count($cat->goods->all())>0)
+        <h2>Товары</h2>
+            @else
+            <h2>Нет ни одного товара</h2>
+        @endif
             <div class="row">
-    @foreach($cat->subsections->all() as $sub)
 
-       @if(count($sub->goods->all())>0)
-
-        @foreach($sub->goods->all() as $good)
+       @if(count($cat->goods->all())>0)
+        @foreach($cat->goods->all() as $good)
             @include('goods.one')
             @endforeach
         @endif
-    @endforeach
+
             </div>
         </div>
     </div>

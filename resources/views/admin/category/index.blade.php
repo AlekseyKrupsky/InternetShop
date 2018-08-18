@@ -4,7 +4,7 @@
     <br>
     <div class="list-group">
         @foreach($categorys as $category)
-            <a href="{{route('adm_cat_each',$category->id)}}" class="list-group-item">{{$category->name}}</a>
+            <a href="{{route('adm_cat_each',$category->id)}}" class="list-group-item">{{$category->getParent()}}</a>
         @endforeach
     </div>
     <br>

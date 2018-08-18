@@ -12,9 +12,15 @@ class CartController extends Controller
     public function show()
     {
         $array = explode(',',\Cookie::get('cart_good'));
-        if($array){
-            $goods = Good::find($array);
+//        if($array){
+//            $goods = Good::find($array);
+//        }
+        $goods_array = [];
+        foreach ($array as $item) {
+            if(Good::find($item))
+            $goods_array[] = Good::find($item);
         }
+        $goods = collect($goods_array);
         return view('cart',['goods'=>$goods]);
     }
     

@@ -17,7 +17,7 @@
             <select class="form-control" id="exampleSelect1" name="parent_id">
                 <option value="" selected>----</option>
                 @foreach($categorys as $category)
-                    <option value="{{$category->id}}">{{$category->name}}</option>
+                    <option value="{{$category->id}}">  {{$category->getParent()}}</option>
                 @endforeach
             </select>
         </div>

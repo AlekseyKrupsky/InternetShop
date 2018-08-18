@@ -20,11 +20,12 @@ Route::get('/goods','GoodsController@index')->name('all_goods');
 Route::post('/good/{id}','CommentController@add')->name('good_show');
 Route::get('/about','AboutController@index')->name('about');
 
-Route::get('/category/{id}','SectionController@index')->name('category');
+Route::get('/category/{id}','CategoryController@show')->name('category');
 Route::get('/section/{id}','SectionController@show')->name('section_show');
 
 Route::get('/neworder/{id}','OrderController@create')->name('new_order');
 Route::post('/neworder/{id}','OrderController@store')->name('new_order');
+//Route::get('/order-cart',)
 
 Route::get('/cart','CartController@show')->name('cart');
 Route::get('/cart/add/{id?}','CartController@add')->name('cart_add');
@@ -69,6 +70,10 @@ Route::prefix('admin')->group(function (){
     Route::get('/about','Admin\AboutController@edit')->name('adm_about');
     Route::post('/about','Admin\AboutController@store')->name('adm_about');
 
+    Route::get('/orders','Admin\OrderController@index')->name('adm_orders');
+    Route::delete('/orders/del/{id}','Admin\OrderController@destroy')->name('adm_orders_del');
+
+
     Route::prefix('address')->namespace('Admin')->group(function (){
         Route::get('/','AddressController@index')->name('adm_address');
         Route::post('/create/{id?}','AddressController@store')->name('adm_add_create');
@@ -89,3 +94,6 @@ Route::prefix('admin')->group(function (){
 
 
 });
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

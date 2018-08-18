@@ -8,7 +8,7 @@ use App\Http\Controllers\Controller;
 use App\Model\Good;
 use App\Http\Requests\PhotoRequest;
 
-class PhotoController extends Controller
+class PhotoController extends MainController
 {
     /**
      * Display a listing of the resource.

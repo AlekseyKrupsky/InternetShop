@@ -13,7 +13,7 @@ use App\Http\Controllers\Controller;
 use App\Model\Address;
 
 
-class GoodsController extends Controller
+class GoodsController extends MainController
 {
     /**
      * Display a listing of the resource.

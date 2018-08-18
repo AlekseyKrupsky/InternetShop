@@ -6,8 +6,6 @@
         <div class="container">
             @if(count($goods)>0)
             <div class="row">
-
-
                     @foreach($goods->all() as $good)
                         <div class="col-md-4">
                             <div class="card mb-4 box-shadow">
@@ -31,7 +29,10 @@
 
             </div>
             <br>
+            <div class="cart-order">
             <h4>Всего к оплате: {{$goods->sum('price')}} р.</h4>
+                <a href="" class="btn btn-primary">Оформить заказ</a>
+            </div>
             @else <h3>Ваша корзина пуста</h3>
             @endif
         </div>

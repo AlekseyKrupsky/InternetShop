@@ -19,7 +19,7 @@
                 @foreach($all_cats as $all_cat)
                     @if($all_cat->id==$category->parent_id)
                         <option selected value="{{$all_cat->id}}">{{$all_cat->name}}</option>
-                    @else <option value="{{$all_cat->id}}">{{$all_cat->name}}</option>
+                    @else <option value="{{$all_cat->id}}">  {{$all_cat->getParent()}}</option>
                     @endif
                 @endforeach
             </select>
