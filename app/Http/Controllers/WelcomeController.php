@@ -46,11 +46,12 @@ class WelcomeController extends Controller
 //        echo $goods->sum('price');
 //
 
-        $goods = Good::sum_like('100','200','%vel%');
-        echo '/////////5//////////<br>';
-        foreach ($goods as $good) {
-            echo $good->name. '    ====    '. $good->price.'<br>';
-        }
+//        $goods = Good::sum_like('100','200','%vel%');
+//        echo '/////////5//////////<br>';
+//        foreach ($goods as $good) {
+//            echo $good->name. '    ====    '. $good->price.'<br>';
+//        }
+
 //
 //        echo '/////////6//////////<br>';
 //

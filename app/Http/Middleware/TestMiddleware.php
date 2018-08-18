@@ -21,6 +21,7 @@ class TestMiddleware
             return $next($request);
         }
 
+
         Log::error('test error');
         Log::info('Someone try to get access');
 
